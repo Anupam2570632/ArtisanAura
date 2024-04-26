@@ -1,0 +1,5 @@
+.itemCard:hover{
+    background-color: #dcdcdc;
+    border: 1px solid #999999;
+    transition-duration: 300ms;
+}

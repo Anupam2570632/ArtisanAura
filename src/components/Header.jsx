@@ -32,8 +32,8 @@ const Header = () => {
     </>
 
     return (
-        <div className="w-full">
-            <div className="navbar bg-base-100 w-11/12 md:w-4/5 mx-auto">
+        <div className="w-full bg-white">
+            <div className="navbar w-11/12 md:w-4/5 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
