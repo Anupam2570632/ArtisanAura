@@ -3,6 +3,7 @@ import Root from "../pages/Root/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import { AddItem } from "../pages/AddItem/AddItem";
 
 const Routes = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/addItem',
-                element: <div> add item</div>
+                element: <AddItem/>
             },
             {
                 path: 'myItems',
