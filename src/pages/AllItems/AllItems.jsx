@@ -25,7 +25,7 @@ const AllItems = () => {
                                 <tr key={item._id} className={idx % 2 === 0 ? "bg-gray-100" : "bg-white"}>
                                     <td className="border px-4 py-2">{idx + 1}</td>
                                     <td className="border px-4 py-2">{item.item_name}</td>
-                                    <td className="border px-4 py-2 flex items-center">{item.price} <BsCurrencyDollar></BsCurrencyDollar></td>
+                                    <td className="border px-4 py-2"><p className=" flex items-center">{item.price} <BsCurrencyDollar></BsCurrencyDollar></p></td>
                                     <td className="border px-4 py-2">{item.stockStatus}</td>
                                     <td className="border px-4 py-2">{item.rating}</td>
                                     <td className="border px-4 py-2 text-center">

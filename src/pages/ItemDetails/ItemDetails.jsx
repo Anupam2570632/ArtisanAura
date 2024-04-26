@@ -14,9 +14,9 @@ const ItemDetails = () => {
         isCustom = false
     }
     return (
-        <div className="w-11/12 md:w-4/5 py-20 border px-6 items-center mx-auto flex flex-col lg:flex-row gap-10">
-            <div className="flex-1 h-full">
-                <img className=" h-full" src={image} alt="" />
+        <div className="w-11/12 md:w-[60%] border p-6 my-20 items-center mx-auto flex flex-col gap-10">
+            <div className="flex-1">
+                <img className="rounded-md" src={image} alt="" />
             </div>
             <div className="space-y-6 flex-1">
                 <h2 className="text-2xl font-bold text-[#3498db]">{item_name}</h2>
