@@ -14,9 +14,9 @@ import BannerMessage from './BannerMessage';
 
 const Banner = () => {
     return (
-        <Swiper navigation={true} loop={true} modules={[Navigation]} className='mySwiper h-screen rounded-xl object-center object-cover'>
+        <Swiper navigation={true} loop={true} modules={[Navigation]} className='mySwiper h-screen object-center object-cover'>
             <SwiperSlide className="relative w-screen mx-auto h-[30vw]">
-                <img className='rounded-xl h-full w-full object-cover object-center' src="https://images.unsplash.com/photo-1607384070812-0965d8827f6f?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                <img className='h-full w-full object-cover object-center' src="https://images.unsplash.com/photo-1607384070812-0965d8827f6f?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
                 <div className='absolute px-[15vw] flex items-center justify-center inset-0 bg-black bg-opacity-50 right-0 bottom-0'>
                     <BannerMessage/>
                 </div>

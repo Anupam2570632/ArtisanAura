@@ -54,7 +54,7 @@ export function AddItem() {
     };
 
     return (
-        <div className="w-full bg-[#CCCC]">
+        <div className="w-full bg-[#fff]">
             <Card className="w-[65%] mx-auto p-20" color="transparent" shadow={false}>
                 <Typography className="text-center" variant="h4" color="blue-gray">
                     Add Item 
@@ -70,7 +70,7 @@ export function AddItem() {
                         </div>
                         <div className="mb-1 flex gap-6">
                             <Input type="text" name="price" color="blue" label="Price" />
-                            <select name="subcategory" className="border w-full border-gray-400 rounded-md p-1  bg-[#CCCC]" defaultValue="">
+                            <select name="subcategory" className="border w-full border-gray-400 rounded-md p-1  bg-[#fff]" defaultValue="">
                                 <option value="">Select Subcategory</option>
                                 <option value="Clay-made pottery">Clay-made pottery</option>
                                 <option value="Stoneware">Stoneware</option>
@@ -82,7 +82,7 @@ export function AddItem() {
                         </div>
                         <div className="mb-1 flex gap-6">
                             <Input type="text" name="rating" color="blue" label="Rating" />
-                            <select name="customization" className="border w-full border-gray-400 bg-[#CCCC] rounded-md p-1" defaultValue="">
+                            <select name="customization" className="border w-full border-gray-400 bg-[#fff] rounded-md p-1" defaultValue="">
                                 <option value="">Select Customization</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>

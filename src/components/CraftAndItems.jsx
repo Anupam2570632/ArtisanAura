@@ -2,6 +2,7 @@ import { Rating } from "@mui/material";
 import { useEffect, useState } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import './item.css'
+import { Link } from "react-router-dom";
 
 
 const CraftAndItems = () => {
@@ -30,9 +31,11 @@ const CraftAndItems = () => {
                                 {item.rating}
                             </div>
                             <h3 className="flex gap-2 items-center text-[#2c3e50]"><BsCurrencyDollar></BsCurrencyDollar>{item.price}</h3>
+                            <hr />
                             <div className="w-full">
-                                <button className="py-2 rounded-md text-white font-bold hover:bg-[#d66400] duration-300 w-full bg-[#fd7e14]">View Details</button>
-
+                                <Link to={`/items/${item._id}`}>
+                                    <button className="py-2 rounded-md text-white font-bold hover:bg-[#d66400] duration-300 w-full bg-[#fd7e14]">View Details</button>
+                                </Link>
                             </div>
                         </div>
                     </div>)

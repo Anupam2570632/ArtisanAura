@@ -8,6 +8,7 @@ import AllItems from "../pages/AllItems/AllItems";
 import MyItem from "../pages/MyItem/MyItem";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import ItemDetails from "../pages/ItemDetails/ItemDetails";
 
 const Routes = createBrowserRouter([
     {
@@ -40,6 +41,11 @@ const Routes = createBrowserRouter([
                 path: '/myItems',
                 element: <PrivateRoute><MyItem /></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/items')
+            },
+            {
+                path: '/items/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`),
+                element: <PrivateRoute><ItemDetails /></PrivateRoute>
             }
         ]
     }

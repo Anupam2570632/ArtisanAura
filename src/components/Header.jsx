@@ -32,7 +32,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="w-full bg-white">
+        <div className="w-full shadow-lg fixed top-0 z-10 bg-white">
             <div className="navbar w-11/12 md:w-4/5 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -55,7 +55,7 @@ const Header = () => {
                         user ?
                             <>
                                 <Tooltip id="my-tooltip" />
-                                <div  data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="bottom">
+                                <div  data-tooltip-id="my-tooltip" className="z-10"  data-tooltip-content={user.displayName} data-tooltip-place="bottom">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full">
                                             <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
@@ -65,8 +65,9 @@ const Header = () => {
                                 <button onClick={handleLogOut} className="btn">Log Out</button>
                             </>
                             :
-                            <div>
+                            <div className="space-x-4">
                                 <Link to={'/login'}><button className="btn">Log In</button></Link>
+                                <Link to={'/register'}><button className="btn">Register</button></Link>
                             </div>
 
                     }
