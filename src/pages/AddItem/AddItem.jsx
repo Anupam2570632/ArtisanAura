@@ -48,6 +48,7 @@ export function AddItem() {
                     icon: "success",
                     button: "OK!",
                   });
+                  form.reset()
             }
         })
     };
@@ -68,7 +69,7 @@ export function AddItem() {
                             <Input name="photo" color="blue" label="Photo URL" />
                         </div>
                         <div className="mb-1 flex gap-6">
-                            <Input name="price" color="blue" label="Price" />
+                            <Input type="text" name="price" color="blue" label="Price" />
                             <select name="subcategory" className="border w-full border-gray-400 rounded-md p-1  bg-[#CCCC]" defaultValue="">
                                 <option value="">Select Subcategory</option>
                                 <option value="Clay-made pottery">Clay-made pottery</option>
@@ -80,7 +81,7 @@ export function AddItem() {
                             </select>
                         </div>
                         <div className="mb-1 flex gap-6">
-                            <Input name="rating" color="blue" label="Rating" />
+                            <Input type="text" name="rating" color="blue" label="Rating" />
                             <select name="customization" className="border w-full border-gray-400 bg-[#CCCC] rounded-md p-1" defaultValue="">
                                 <option value="">Select Customization</option>
                                 <option value="Yes">Yes</option>

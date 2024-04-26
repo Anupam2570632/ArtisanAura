@@ -4,11 +4,16 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import { AddItem } from "../pages/AddItem/AddItem";
+import AllItems from "../pages/AllItems/AllItems";
+import MyItem from "../pages/MyItem/MyItem";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const Routes = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
@@ -19,20 +24,22 @@ const Routes = createBrowserRouter([
                 element: <Login />
             },
             {
-                path:'/register',
-                element:<Register/>
+                path: '/register',
+                element: <Register />
             },
             {
                 path: '/allItems',
-                element: <div>all item</div>
+                element: <PrivateRoute><AllItems /></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/items')
             },
             {
                 path: '/addItem',
-                element: <AddItem/>
+                element: <PrivateRoute><AddItem /></PrivateRoute>
             },
             {
-                path: 'myItems',
-                element: <div>  my items</div>
+                path: '/myItems',
+                element: <PrivateRoute><MyItem /></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/items')
             }
         ]
     }
