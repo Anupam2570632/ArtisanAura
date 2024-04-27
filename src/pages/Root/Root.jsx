@@ -11,7 +11,7 @@ const Root = () => {
         <div>
             <HelmetProvider>
                 <Header/>
-                <div className=" mt-[72px]">
+                <div className=" mt-[65px]">
                 <Outlet/>
                 </div>
                 <Footer/>

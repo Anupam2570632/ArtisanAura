@@ -33,31 +33,31 @@ export function AddItem() {
         console.log(item);
 
         fetch('http://localhost:5000/items', {
-            method:'POST', 
-            headers:{
-                'content-type':'application/json'
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(item)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
-            if(data.insertedId){
-                swal({
-                    title: "Item Added Successfully!",
-                    icon: "success",
-                    button: "OK!",
-                  });
-                  form.reset()
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    swal({
+                        title: "Item Added Successfully!",
+                        icon: "success",
+                        button: "OK!",
+                    });
+                    form.reset()
+                }
+            })
     };
 
     return (
-        <div className="w-full bg-[#fff]">
+        <div className="w-full">
             <Card className="w-[65%] mx-auto p-20" color="transparent" shadow={false}>
                 <Typography className="text-center" variant="h4" color="blue-gray">
-                    Add Item 
+                    Add Item
                 </Typography>
                 <Typography color="gray" className="mt-1 text-center font-normal">
                     Nice to meet you! Enter your details to register.
@@ -70,7 +70,7 @@ export function AddItem() {
                         </div>
                         <div className="mb-1 flex gap-6">
                             <Input type="text" name="price" color="blue" label="Price" />
-                            <select name="subcategory" className="border w-full border-gray-400 rounded-md p-1  bg-[#fff]" defaultValue="">
+                            <select name="subcategory" className="border w-full border-gray-400 rounded-md p-1 " defaultValue="">
                                 <option value="">Select Subcategory</option>
                                 <option value="Clay-made pottery">Clay-made pottery</option>
                                 <option value="Stoneware">Stoneware</option>
@@ -82,7 +82,7 @@ export function AddItem() {
                         </div>
                         <div className="mb-1 flex gap-6">
                             <Input type="text" name="rating" color="blue" label="Rating" />
-                            <select name="customization" className="border w-full border-gray-400 bg-[#fff] rounded-md p-1" defaultValue="">
+                            <select name="customization" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
                                 <option value="">Select Customization</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -90,7 +90,12 @@ export function AddItem() {
                         </div>
                         <div className="mb-1 flex gap-6">
                             <Input name="time" color="blue" label="Processing Time" />
-                            <Input name="stock" color="blue" label="Stock Status" />
+                            {/* <Input name="stock" color="blue" label="Stock Status" /> */}
+                            <select name="stock" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
+                                <option value="">Stock Status</option>
+                                <option value="In stock">In stock</option>
+                                <option value="Made to Order">Made to Order</option>
+                            </select>
                         </div>
                         <div className="mb-1 flex gap-6">
                             <Input defaultValue={user?.email} name="email" color="blue" label="User Email" />

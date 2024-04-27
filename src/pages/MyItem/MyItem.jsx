@@ -8,6 +8,7 @@ import { RxCross1, RxUpdate } from "react-icons/rx";
 import { MdDeleteForever } from "react-icons/md";
 import '../../components/item.css'
 import swal from "sweetalert";
+import { IoIosArrowDown } from "react-icons/io";
 
 const MyItem = () => {
     const loadedItems = useLoaderData()
@@ -16,9 +17,15 @@ const MyItem = () => {
 
     const { user } = useContext(AuthContext)
     const email = user.email;
-
     const myData = items.filter(item => item.userEmail === email)
-    console.log(myData)
+
+    const [displayData, setDisplayData] = useState(myData)
+
+
+    const handleFilterItem = (customization) => {
+        const filteredItem = myData.filter(item => item.customization === customization)
+        setDisplayData(filteredItem)
+    }
 
     const handleDelete = id => {
         console.log(id)
@@ -42,6 +49,7 @@ const MyItem = () => {
                                     icon: "success",
                                 });
                                 const remainingItem = items.filter(coffee => coffee._id !== id)
+                                setDisplayData(remainingItem)
                                 setItems(remainingItem)
                             }
                         })
@@ -52,9 +60,19 @@ const MyItem = () => {
 
 
     return (
-        <div className="w-11/12 md:w-[55%] gap-6 mx-auto py-20">
+        <div className="w-11/12 md:w-[55%] gap-6 mx-auto py-10 text-center">
+            <div className="mx-auto py-10 w-full">
+                <div className="dropdown mx-auto">
+                    <div tabIndex={0} role="button" className="btn m-1 bg-blue-500 text-white font-bold">Filter with Customization <IoIosArrowDown className="text-xl" /></div>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-blue-300 rounded-box w-52 text-black font-medium">
+                        <li><button className="bg-blue-300" onClick={() => setDisplayData(myData)}>None</button></li>
+                        <li><button className="bg-blue-300" onClick={() => handleFilterItem('Yes')}>Yes</button></li>
+                        <li><button className="bg-blue-300" onClick={() => handleFilterItem('No')}>No</button></li>
+                    </ul>
+                </div>
+            </div>
             {
-                myData.map(item => <div className="itemCard mt-8 p-6 border bg-[#f5f5f5] border-[#e0e0e0] rounded-md flex flex-col md:flex-row gap-4 items-center" key={item._id}>
+                displayData.map(item => <div className="itemCard mt-8 p-6 border border-[#e0e0e0] rounded-md flex flex-col md:flex-row gap-4 items-center" key={item._id}>
                     <div className="relative w-[300px]">
                         <img className="h-60 object-cover rounded-md w-full object-bottom" src={item.image} alt="" />
                         <h1 className={`absolute top-1 right-1 px-2 py-1 ${item.stockStatus == 'In stock' ? 'bg-[#fd7e14]' : 'bg-cyan-600'} rounded-full text-white`}>{item.stockStatus}</h1>

@@ -10,7 +10,7 @@ const AllItems = () => {
             <div className="overflow-x-auto">
                 <table className="table table-auto border-collapse border border-gray-400 shadow-md">
                     <thead>
-                        <tr className="bg-gray-200">
+                        <tr className="">
                             <th className="px-4 py-4 text-[18px] "></th>
                             <th className="px-4 py-4 text-[18px] ">Item Name</th>
                             <th className="px-4 py-4 text-[18px] ">Price</th>
@@ -22,7 +22,7 @@ const AllItems = () => {
                     <tbody>
                         {
                             loadedItems.map((item, idx) => (
-                                <tr key={item._id} className={idx % 2 === 0 ? "bg-gray-100" : "bg-white"}>
+                                <tr key={item._id} >
                                     <td className="border px-4 py-2">{idx + 1}</td>
                                     <td className="border px-4 py-2">{item.item_name}</td>
                                     <td className="border px-4 py-2"><p className=" flex items-center">{item.price} <BsCurrencyDollar></BsCurrencyDollar></p></td>
