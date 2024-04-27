@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Rating } from "@mui/material";
@@ -7,19 +7,52 @@ import { FaCheck } from "react-icons/fa6";
 import { RxCross1, RxUpdate } from "react-icons/rx";
 import { MdDeleteForever } from "react-icons/md";
 import '../../components/item.css'
+import swal from "sweetalert";
 
 const MyItem = () => {
     const loadedItems = useLoaderData()
 
+    const [items, setItems] = useState(loadedItems)
+
     const { user } = useContext(AuthContext)
     const email = user.email;
 
-    const myData = loadedItems.filter(item => item.userEmail === email)
+    const myData = items.filter(item => item.userEmail === email)
     console.log(myData)
+
+    const handleDelete = id => {
+        console.log(id)
+
+        swal({
+            title: "Are you sure want to delete this coffee?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    fetch(`http://localhost:5000/items/${id}`, {
+                        method: "DELETE"
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                swal("This coffee has been deleted!", {
+                                    icon: "success",
+                                });
+                                const remainingItem = items.filter(coffee => coffee._id !== id)
+                                setItems(remainingItem)
+                            }
+                        })
+                }
+            });
+
+    }
 
 
     return (
-        <div className="w-11/12 md:w-[55%] gap-6 mx-auto">
+        <div className="w-11/12 md:w-[55%] gap-6 mx-auto py-20">
             {
                 myData.map(item => <div className="itemCard mt-8 p-6 border bg-[#f5f5f5] border-[#e0e0e0] rounded-md flex flex-col md:flex-row gap-4 items-center" key={item._id}>
                     <div className="relative w-[300px]">
@@ -47,7 +80,7 @@ const MyItem = () => {
                                 </Link>
                             </div>
                             <div>
-                                <button className="flex btn btn-block items-center gap-2 text-white hover:bg-[#d66400] duration-300 bg-[#fd7e14] font-bold">Delete Item<MdDeleteForever className="text-xl" /></button>
+                                <button onClick={() => handleDelete(item._id)} className="flex btn btn-block items-center gap-2 text-white hover:bg-[#d66400] duration-300 bg-[#fd7e14] font-bold">Delete Item<MdDeleteForever className="text-xl" /></button>
                             </div>
                         </div>
                     </div>

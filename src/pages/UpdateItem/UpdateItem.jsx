@@ -18,6 +18,7 @@ export default function UpdateItem() {
 
 
     const { user } = useContext(AuthContext)
+    const id = loadedItem._id
 
     const handleSubmit = e => {
 
@@ -35,28 +36,27 @@ export default function UpdateItem() {
         const subcategory_name = form.elements['subcategory'].value;
         const customization = form.elements['customization'].value;
 
-        const item = { item_name, image, subcategory_name, price, rating, customization, processing_time, stockStatus, userEmail, userName, shortDescription };
+        const item = { id, item_name, image, subcategory_name, price, rating, customization, processing_time, stockStatus, userEmail, userName, shortDescription };
         console.log(item);
 
-        // fetch('http://localhost:5000/items', {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(item)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data)
-        //         if (data.modifiedCount > 0) {
-        //             swal({
-        //                 title: "Item Updated Successfully!",
-        //                 icon: "success",
-        //                 button: "OK!",
-        //             });
-        //             form.reset()
-        //         }
-        //     })
+        fetch('http://localhost:5000/items', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    swal({
+                        title: "Item Updated Successfully!",
+                        icon: "success",
+                        button: "OK!",
+                    });
+                }
+            })
     };
 
     return (
