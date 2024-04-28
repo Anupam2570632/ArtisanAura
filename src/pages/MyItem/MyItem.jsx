@@ -40,7 +40,7 @@ const MyItem = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/items/${id}`, {
+                    fetch(`https://artisan-aura-server.vercel.app/items/${id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())

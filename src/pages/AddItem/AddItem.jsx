@@ -32,7 +32,7 @@ export function AddItem() {
         const item = { item_name, image, subcategory_name, price, rating, customization, processing_time, stockStatus, userEmail, userName, shortDescription };
         console.log(item);
 
-        fetch('http://localhost:5000/items', {
+        fetch('https://artisan-aura-server.vercel.app/items', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

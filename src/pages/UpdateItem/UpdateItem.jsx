@@ -39,7 +39,7 @@ export default function UpdateItem() {
         const item = { id, item_name, image, subcategory_name, price, rating, customization, processing_time, stockStatus, userEmail, userName, shortDescription };
         console.log(item);
 
-        fetch('http://localhost:5000/items', {
+        fetch('https://artisan-aura-server.vercel.app/items', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

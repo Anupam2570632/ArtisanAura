@@ -33,7 +33,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/allItems',
                 element: <AllItems />,
-                loader: () => fetch('http://localhost:5000/items')
+                loader: () => fetch('https://artisan-aura-server.vercel.app/items')
             },
             {
                 path: '/addItem',
@@ -42,21 +42,21 @@ const Routes = createBrowserRouter([
             {
                 path: '/myItems',
                 element: <PrivateRoute><MyItem /></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/items')
+                loader: () => fetch('https://artisan-aura-server.vercel.app/items')
             },
             {
                 path: '/items/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`),
+                loader: ({ params }) => fetch(`https://artisan-aura-server.vercel.app/items/${params.id}`),
                 element: <PrivateRoute><ItemDetails /></PrivateRoute>
             },
             {
                 path: '/updateItem/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`),
+                loader: ({ params }) => fetch(`https://artisan-aura-server.vercel.app/items/${params.id}`),
                 element: <PrivateRoute><UpdateItem /></PrivateRoute>
             },
             {
                 path: '/category/:subcategory_name',
-                loader: ({ params }) => fetch(`http://localhost:5000/item/${params.subcategory_name}`),
+                loader: ({ params }) => fetch(`https://artisan-aura-server.vercel.app/item/${params.subcategory_name}`),
                 element: <CategoryCollection />
             }
         ]
