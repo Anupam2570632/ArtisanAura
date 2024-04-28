@@ -12,7 +12,6 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
-import { Helmet } from "react-helmet-async";
 import { signOut } from "firebase/auth";
 import auth from "../../Firebase/firebase.config";
 
@@ -63,12 +62,6 @@ const Register = () => {
 
     return (
         <div className="p-10 m-0 bg-base-200 flex items-center justify-center">
-            {user && (
-                user.photoURL ? <div className="hidden">{user.photoURL}</div> : <div className="hidden">no</div>
-            )}
-            <Helmet>
-                <title>ShelterSquare | Register</title>
-            </Helmet>
             <div className="h-[700px] bg-base-200 w-screen flex items-center justify-center">
                 <form onSubmit={handleRegister} className="w-96 mx-auto">
                     <CardHeader
