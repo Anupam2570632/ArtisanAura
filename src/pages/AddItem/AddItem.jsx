@@ -65,12 +65,12 @@ export function AddItem() {
                 <form onSubmit={handleSubmit} className="mt-8 mb-2 max-w-screen-lg">
                     <div className="space-y-6">
                         <div className="mb-1 flex gap-6">
-                            <Input name="name" color="blue" label="Item Name" />
-                            <Input name="photo" color="blue" label="Photo URL" />
+                            <Input required name="name" color="blue" label="Item Name" />
+                            <Input required name="photo" color="blue" label="Photo URL" />
                         </div>
                         <div className="mb-1 flex gap-6">
-                            <Input type="text" name="price" color="blue" label="Price" />
-                            <select name="subcategory" className="border w-full border-gray-400 rounded-md p-1 " defaultValue="">
+                            <Input required type="text" name="price" color="blue" label="Price" />
+                            <select required name="subcategory" className="border w-full border-gray-400 rounded-md p-1 " defaultValue="">
                                 <option value="">Select Subcategory</option>
                                 <option value="Clay-made pottery">Clay-made pottery</option>
                                 <option value="Stoneware">Stoneware</option>
@@ -81,17 +81,17 @@ export function AddItem() {
                             </select>
                         </div>
                         <div className="mb-1 flex gap-6">
-                            <Input type="text" name="rating" color="blue" label="Rating" />
-                            <select name="customization" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
+                            <Input required type="text" name="rating" color="blue" label="Rating" />
+                            <select required name="customization" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
                                 <option value="">Select Customization</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
                         </div>
                         <div className="mb-1 flex gap-6">
-                            <Input name="time" color="blue" label="Processing Time" />
+                            <Input required name="time" color="blue" label="Processing Time" />
                             {/* <Input name="stock" color="blue" label="Stock Status" /> */}
-                            <select name="stock" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
+                            <select required name="stock" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
                                 <option value="">Stock Status</option>
                                 <option value="In stock">In stock</option>
                                 <option value="Made to Order">Made to Order</option>
@@ -101,7 +101,7 @@ export function AddItem() {
                             <Input defaultValue={user?.email} name="email" color="blue" label="User Email" />
                             <Input defaultValue={user?.displayName} name="userName" color="blue" label="User Name" />
                         </div>
-                        <Textarea name="description" color="blue" label="Short Description" />
+                        <Textarea required name="description" color="blue" label="Short Description" />
                     </div>
                     <Button type="submit" className="mt-6" fullWidth>
                         Add Item

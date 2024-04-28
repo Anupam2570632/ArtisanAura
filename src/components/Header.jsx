@@ -47,8 +47,8 @@ const Header = () => {
 
     return (
         <div className="w-full shadow-lg fixed top-0 z-10 bg-white">
-            <div className="navbar w-11/12 md:w-4/5 mx-auto p-0">
-                <div className="navbar-start p-0">
+            <div className="navbar w-11/12 md:w-[85%] mx-auto p-0">
+                <div className="navbar-start space-x-4">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost p-0 lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -58,7 +58,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <Link to={'/'}>
-                        <h2 className="font-bold text-black text-3xl p-0">Artisan<span className="text-cyan-500">Aura</span></h2>
+                        <h2 className="font-bold text-black text-xl md:text-3xl p-0">Artisan<span className="text-cyan-500">Aura</span></h2>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">

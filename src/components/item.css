@@ -1,5 +1,19 @@
-.itemCard:hover{
-    background-color: #dcdcdc;
-    border: 1px solid #999999;
-    transition-duration: 300ms;
+.itemCard:hover {
+  background-color: #dcdcdc;
+  border: 1px solid #999999;
+  transition-duration: 300ms;
+}
+
+.category-card:hover .text-underline {
+    width: 100%;
+    border-bottom: 3px solid red;
+    transition-duration: 500ms;
+}
+.category-card:hover .category_img {
+    object-position: center;
+    transition-duration: 500ms;
+}
+.category-card:hover{
+    transform: scale(1.05);
+    transition-duration: 500ms;
 }

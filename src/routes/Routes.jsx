@@ -10,6 +10,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ItemDetails from "../pages/ItemDetails/ItemDetails";
 import UpdateItem from "../pages/UpdateItem/UpdateItem";
+import CategoryCollection from "../pages/CategoryCollection/CategoryCollection";
 
 const Routes = createBrowserRouter([
     {
@@ -31,7 +32,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/allItems',
-                element: <PrivateRoute><AllItems /></PrivateRoute>,
+                element: <AllItems />,
                 loader: () => fetch('http://localhost:5000/items')
             },
             {
@@ -52,6 +53,11 @@ const Routes = createBrowserRouter([
                 path: '/updateItem/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`),
                 element: <PrivateRoute><UpdateItem /></PrivateRoute>
+            },
+            {
+                path: '/category/:subcategory_name',
+                loader: ({ params }) => fetch(`http://localhost:5000/item/${params.subcategory_name}`),
+                element: <CategoryCollection />
             }
         ]
     }
