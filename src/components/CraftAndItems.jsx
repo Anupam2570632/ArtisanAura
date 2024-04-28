@@ -21,7 +21,7 @@ const CraftAndItems = () => {
             <hr className="w-9/12 mx-auto" />
             <div className="w-11/12 md:w-[80%] mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                 {
-                    items.slice(2, 8).map(item => <div className="itemCard mt-8 p-6 border  border-[#e0e0e0] rounded-md flex flex-col gap-4 items-center" key={item._id}>
+                    items.slice(2, 8).map(item => <div className="itemCard p-6 border  border-[#e0e0e0] rounded-md flex flex-col gap-4 items-center" key={item._id}>
                         <img className="h-60 object-cover rounded-sm w-full object-bottom" src={item.image} alt="" />
                         <div className="flex w-full flex-col gap-4 items-center">
                             <h1 className="text-[#3498db] font-bold text-xl">{item.item_name}</h1>

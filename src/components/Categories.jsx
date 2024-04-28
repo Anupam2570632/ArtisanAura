@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './item.css'
+import { Typography } from "@material-tailwind/react";
 
 const Categories = () => {
     const [categories, setCategories] = useState([])
@@ -14,7 +15,14 @@ const Categories = () => {
     console.log(categories)
 
     return (
-        <div className="w-11/12 md:w-4/5 mx-auto my-24">
+        <div className="w-11/12 md:w-4/5 mx-auto mb-24 space-y-6">
+            <Typography className="text-center" variant="h4" color="blue-gray">
+                Explore Art & Craft Categories
+            </Typography>
+            <Typography className="text-center" color="gray">
+                Explore a curated collection of ceramics and pottery at Artisan Aura. Find unique pieces for home decor or architectural projects. Start exploring now!
+            </Typography>
+            <hr />
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {
                     categories.map(category => <Link to={`/category/${category.subcategory_name}`} className="category-card relative rounded-lg overflow-hidden" key={category._id}>

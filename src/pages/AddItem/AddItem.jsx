@@ -55,20 +55,21 @@ export function AddItem() {
 
     return (
         <div className="w-full">
-            <Card className="w-[65%] mx-auto p-20" color="transparent" shadow={false}>
+            <Card className="w-11/12 md:w-[65%] mx-auto py-10 md:p-4 lg:p-20 space-y-6" color="transparent" shadow={false}>
                 <Typography className="text-center" variant="h4" color="blue-gray">
-                    Add Item
+                    Add New Item
                 </Typography>
                 <Typography color="gray" className="mt-1 text-center font-normal">
-                    Nice to meet you! Enter your details to register.
+                    Welcome to ArtisanAura&apos;s item addition page! Easily add your artisan products to our collection. Show off your craft and reach customers worldwide.
                 </Typography>
+                <hr />
                 <form onSubmit={handleSubmit} className="mt-8 mb-2 max-w-screen-lg">
                     <div className="space-y-6">
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input required name="name" color="blue" label="Item Name" />
                             <Input required name="photo" color="blue" label="Photo URL" />
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input required type="text" name="price" color="blue" label="Price" />
                             <select required name="subcategory" className="border w-full border-gray-400 rounded-md p-1 " defaultValue="">
                                 <option value="">Select Subcategory</option>
@@ -80,7 +81,7 @@ export function AddItem() {
                                 <option value="Home decor pottery">Home decor pottery</option>
                             </select>
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input required type="text" name="rating" color="blue" label="Rating" />
                             <select required name="customization" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
                                 <option value="">Select Customization</option>
@@ -88,7 +89,7 @@ export function AddItem() {
                                 <option value="No">No</option>
                             </select>
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input required name="time" color="blue" label="Processing Time" />
                             {/* <Input name="stock" color="blue" label="Stock Status" /> */}
                             <select required name="stock" className="border w-full border-gray-400 rounded-md p-1" defaultValue="">
@@ -97,7 +98,7 @@ export function AddItem() {
                                 <option value="Made to Order">Made to Order</option>
                             </select>
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input defaultValue={user?.email} name="email" color="blue" label="User Email" />
                             <Input defaultValue={user?.displayName} name="userName" color="blue" label="User Name" />
                         </div>

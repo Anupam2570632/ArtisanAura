@@ -18,8 +18,8 @@ const Footer = () => {
                         <h1 className="text-xl mb-4 font-semibold">Navigation Links</h1>
                         <ul className="flex gap-2 flex-col">
                             <Link className="text-[#CCCCCC]" to={'/'}>Home</Link>
-                            <Link className="text-[#CCCCCC]" to={'/update-profile'}>Update Profile</Link>
-                            <Link className="text-[#CCCCCC]" to={'/contact-us'}>Contact Us</Link>
+                            <Link className="text-[#CCCCCC]" to={'/allItems'}>All art & craft Items</Link>
+                            <Link className="text-[#CCCCCC]" to={'/addItem'}>Add Item</Link>
                         </ul>
                     </div>
                     <div>
@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
             <div className="text-center">
                 <p className="">@all rights reserved, <span><Link to={'/'}>
-                    <span className="font-bold text-[#fff]">Shelter<span className="text-cyan-500">Square</span></span>
+                    <span className="font-bold text-[#fff]">Artisan<span className="text-cyan-500">Aura</span></span>
                 </Link></span> services limited.2016</p>
             </div>
         </div>

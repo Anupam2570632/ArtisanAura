@@ -9,13 +9,16 @@ import {
 } from "@material-tailwind/react";
 import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { signOut } from "firebase/auth";
+import auth from "../../Firebase/firebase.config";
 
 const Register = () => {
     const [show, setShow] = useState(false)
+    const navigate = useNavigate()
 
     const { createAccount, updateUserInformation, user, setUser } = useContext(AuthContext)
     const [passwordError, setPAsswordError] = useState(null)
@@ -40,6 +43,8 @@ const Register = () => {
                     .then(() => {
                         setUser(result.user)
                         console.log(user)
+                        signOut(auth)
+                        navigate('/login')
                     })
                     .catch(error => {
                         console.error(error)

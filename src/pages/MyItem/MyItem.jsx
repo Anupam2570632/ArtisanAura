@@ -9,6 +9,7 @@ import { MdDeleteForever } from "react-icons/md";
 import '../../components/item.css'
 import swal from "sweetalert";
 import { IoIosArrowDown } from "react-icons/io";
+import { Typography } from "@material-tailwind/react";
 
 const MyItem = () => {
     const loadedItems = useLoaderData()
@@ -59,9 +60,31 @@ const MyItem = () => {
     }
 
 
+    if (displayData.length === 0) {
+        return (
+            <div className="w-11/12 md:w-[55%] mx-auto py-10 text-center space-y-6">
+                <Typography className="text-center" variant="h4" color="blue-gray">
+                    Your Items Collection
+                </Typography>
+                <Typography className="text-center" color="gray">
+                You haven&apos;t added any items yet.
+                                </Typography>
+
+                <Link className="btn btn-secondary" to={'/addItem'}>Add Item</Link>
+            </div>
+        )
+    }
+
+
     return (
-        <div className="w-11/12 md:w-[55%] gap-6 mx-auto py-10 text-center">
-            <div className="mx-auto py-10 w-full">
+        <div className="w-11/12 md:w-[55%] mx-auto py-10 text-center space-y-6">
+            <Typography className="text-center" variant="h4" color="blue-gray">
+                Your Items Collection
+            </Typography>
+            <Typography className="text-center" color="gray">
+                Explore your curated collection of artisanal treasures. Each piece reflects your unique taste and style. Start showcasing your creativity today!
+            </Typography>
+            <div className="mx-auto py-4 w-full">
                 <div className="dropdown mx-auto">
                     <div tabIndex={0} role="button" className="btn m-1 bg-blue-500 text-white font-bold">Filter with Customization <IoIosArrowDown className="text-xl" /></div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-blue-300 rounded-box w-52 text-black font-medium">

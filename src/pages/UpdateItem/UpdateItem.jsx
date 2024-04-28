@@ -61,20 +61,21 @@ export default function UpdateItem() {
 
     return (
         <div className="w-full bg-[#fff]">
-            <Card className="w-[65%] mx-auto p-20" color="transparent" shadow={false}>
+            <Card className="w-11/12 md:w-[65%] mx-auto py-10 md:p-4 lg:p-20 space-y-6" color="transparent" shadow={false}>
                 <Typography className="text-center" variant="h4" color="blue-gray">
                     Update Item
                 </Typography>
                 <Typography color="gray" className="mt-1 text-center font-normal">
-                    Nice to meet you! Enter your details to register.
+                    Easily enhance your presence on ArtisanAura. Edit descriptions, images, and pricing to ensure your masterpiece shines. Keep your listings fresh and engaging, and let your creativity flourish!
                 </Typography>
+                <hr />
                 <form onSubmit={handleSubmit} className="mt-8 mb-2 max-w-screen-lg">
                     <div className="space-y-6">
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input defaultValue={item_name} name="name" color="blue" label="Item Name" />
                             <Input defaultValue={image} name="photo" color="blue" label="Photo URL" />
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input defaultValue={price} type="text" name="price" color="blue" label="Price" />
                             <select defaultValue={subcategory_name} name="subcategory" className="border w-full border-gray-400 rounded-md p-1  bg-[#fff]">
                                 <option value="">Select Subcategory</option>
@@ -86,7 +87,7 @@ export default function UpdateItem() {
                                 <option value="Home decor pottery">Home decor pottery</option>
                             </select>
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input defaultValue={rating} type="text" name="rating" color="blue" label="Rating" />
                             <select name="customization" className="border w-full border-gray-400 bg-[#fff] rounded-md p-1" defaultValue={customization}>
                                 <option value="">Select Customization</option>
@@ -94,11 +95,11 @@ export default function UpdateItem() {
                                 <option value="No">No</option>
                             </select>
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input defaultValue={processing_time} name="time" color="blue" label="Processing Time" />
                             <Input defaultValue={stockStatus} name="stock" color="blue" label="Stock Status" />
                         </div>
-                        <div className="mb-1 flex gap-6">
+                        <div className="mb-1 flex flex-col md:flex-row gap-6">
                             <Input defaultValue={user?.email} name="email" color="blue" label="User Email" />
                             <Input defaultValue={user?.displayName} name="userName" color="blue" label="User Name" />
                         </div>

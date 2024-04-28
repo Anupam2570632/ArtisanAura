@@ -17,3 +17,8 @@
     transform: scale(1.05);
     transition-duration: 500ms;
 }
+
+.card-main:hover .card-item{
+    bottom: 0;
+    transition-duration: 400ms;
+}
