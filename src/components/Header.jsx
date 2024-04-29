@@ -47,7 +47,7 @@ const Header = () => {
 
     return (
         <div className="w-full shadow-lg fixed top-0 z-10 bg-white">
-            <div className="navbar w-11/12 md:w-[85%] mx-auto p-0">
+            <div className="navbar w-11/12 max-w-[1500px] md:w-[85%] mx-auto p-0">
                 <div className="navbar-start space-x-4">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost p-0 lg:hidden">

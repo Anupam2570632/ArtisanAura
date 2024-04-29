@@ -7,7 +7,7 @@ const CategoryCollection = () => {
     const items = useLoaderData()
 
     return (
-        <div className="space-y-6 text-center py-10">
+        <div className="space-y-6 text-center py-10 max-w-[1500px]">
             <div className="w-11/12 md:w-[80%] mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                 {
                     items.map(item => <div className="itemCard mt-8 p-6 border  border-[#e0e0e0] rounded-md flex flex-col gap-4 items-center" key={item._id}>

@@ -61,7 +61,7 @@ export default function UpdateItem() {
 
     return (
         <div className="w-full bg-[#fff]">
-            <Card className="w-11/12 md:w-[65%] mx-auto py-10 md:p-4 lg:p-20 space-y-6" color="transparent" shadow={false}>
+            <Card className="w-11/12 md:w-[65%] max-w-[1500px] mx-auto py-10 md:p-4 lg:p-20 space-y-6" color="transparent" shadow={false}>
                 <Typography className="text-center" variant="h4" color="blue-gray">
                     Update Item
                 </Typography>
@@ -69,46 +69,48 @@ export default function UpdateItem() {
                     Easily enhance your presence on ArtisanAura. Edit descriptions, images, and pricing to ensure your masterpiece shines. Keep your listings fresh and engaging, and let your creativity flourish!
                 </Typography>
                 <hr />
-                <form onSubmit={handleSubmit} className="mt-8 mb-2 max-w-screen-lg">
-                    <div className="space-y-6">
-                        <div className="mb-1 flex flex-col md:flex-row gap-6">
-                            <Input defaultValue={item_name} name="name" color="blue" label="Item Name" />
-                            <Input defaultValue={image} name="photo" color="blue" label="Photo URL" />
+                <div className="mx-auto w-full flex items-center justify-center">
+                    <form onSubmit={handleSubmit} className="mt-8 w-full mb-2 max-w-screen-lg">
+                        <div className="space-y-6">
+                            <div className="mb-1 flex flex-col md:flex-row gap-6">
+                                <Input defaultValue={item_name} name="name" color="blue" label="Item Name" />
+                                <Input defaultValue={image} name="photo" color="blue" label="Photo URL" />
+                            </div>
+                            <div className="mb-1 flex flex-col md:flex-row gap-6">
+                                <Input defaultValue={price} type="text" name="price" color="blue" label="Price" />
+                                <select defaultValue={subcategory_name} name="subcategory" className="border w-full border-gray-400 rounded-md p-1  bg-[#fff]">
+                                    <option value="">Select Subcategory</option>
+                                    <option value="Clay-made pottery">Clay-made pottery</option>
+                                    <option value="Stoneware">Stoneware</option>
+                                    <option value="Porcelain">Porcelain</option>
+                                    <option value="Terra Cotta">Terra Cotta</option>
+                                    <option value="Ceramics & Architectural">Ceramics & Architectural</option>
+                                    <option value="Home decor pottery">Home decor pottery</option>
+                                </select>
+                            </div>
+                            <div className="mb-1 flex flex-col md:flex-row gap-6">
+                                <Input defaultValue={rating} type="text" name="rating" color="blue" label="Rating" />
+                                <select name="customization" className="border w-full border-gray-400 bg-[#fff] rounded-md p-1" defaultValue={customization}>
+                                    <option value="">Select Customization</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div className="mb-1 flex flex-col md:flex-row gap-6">
+                                <Input defaultValue={processing_time} name="time" color="blue" label="Processing Time" />
+                                <Input defaultValue={stockStatus} name="stock" color="blue" label="Stock Status" />
+                            </div>
+                            <div className="mb-1 flex flex-col md:flex-row gap-6">
+                                <Input defaultValue={user?.email} name="email" color="blue" label="User Email" />
+                                <Input defaultValue={user?.displayName} name="userName" color="blue" label="User Name" />
+                            </div>
+                            <Textarea defaultValue={shortDescription} name="description" color="blue" label="Short Description" />
                         </div>
-                        <div className="mb-1 flex flex-col md:flex-row gap-6">
-                            <Input defaultValue={price} type="text" name="price" color="blue" label="Price" />
-                            <select defaultValue={subcategory_name} name="subcategory" className="border w-full border-gray-400 rounded-md p-1  bg-[#fff]">
-                                <option value="">Select Subcategory</option>
-                                <option value="Clay-made pottery">Clay-made pottery</option>
-                                <option value="Stoneware">Stoneware</option>
-                                <option value="Porcelain">Porcelain</option>
-                                <option value="Terra Cotta">Terra Cotta</option>
-                                <option value="Ceramics & Architectural">Ceramics & Architectural</option>
-                                <option value="Home decor pottery">Home decor pottery</option>
-                            </select>
-                        </div>
-                        <div className="mb-1 flex flex-col md:flex-row gap-6">
-                            <Input defaultValue={rating} type="text" name="rating" color="blue" label="Rating" />
-                            <select name="customization" className="border w-full border-gray-400 bg-[#fff] rounded-md p-1" defaultValue={customization}>
-                                <option value="">Select Customization</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-                        <div className="mb-1 flex flex-col md:flex-row gap-6">
-                            <Input defaultValue={processing_time} name="time" color="blue" label="Processing Time" />
-                            <Input defaultValue={stockStatus} name="stock" color="blue" label="Stock Status" />
-                        </div>
-                        <div className="mb-1 flex flex-col md:flex-row gap-6">
-                            <Input defaultValue={user?.email} name="email" color="blue" label="User Email" />
-                            <Input defaultValue={user?.displayName} name="userName" color="blue" label="User Name" />
-                        </div>
-                        <Textarea defaultValue={shortDescription} name="description" color="blue" label="Short Description" />
-                    </div>
-                    <Button type="submit" className="mt-6" fullWidth>
-                        Update Item
-                    </Button>
-                </form>
+                        <Button type="submit" className="mt-6" fullWidth>
+                            Update Item
+                        </Button>
+                    </form>
+                </div>
             </Card>
         </div>
     );

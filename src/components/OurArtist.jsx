@@ -2,7 +2,7 @@ import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa6';
 import './item.css'
 const OurArtist = () => {
     return (
-        <div className='w-11/12 md:w-4/5 mx-auto text-center space-y-10 my-20'>
+        <div className='w-11/12 md:w-4/5 mx-auto text-center space-y-10 my-20 max-w-[1500px]'>
             <h2 className='text-2xl md:text-4xl font-bold'>Creative Modern Artists</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mx-auto gap-6'>
                 <div className="card-main relative w-64 overflow-hidden mx-auto">

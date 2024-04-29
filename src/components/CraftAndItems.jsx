@@ -15,7 +15,7 @@ const CraftAndItems = () => {
 
 
     return (
-        <div className="space-y-6 text-center py-16 md:py-32">
+        <div className="space-y-6 text-center py-16 md:py-32 max-w-[1500px] mx-auto">
             <h1 className="text-2xl md:text-4xl font-bold ">Our Craft & Items</h1>
             <p className="text-[#AAAA] md:w-[75%] text-center mx-auto">Embark on a journey through our Craft Items Section. Discover artisanal treasures, from sculptures to textiles, each narrating a tale of exquisite craftsmanship. Start exploring today and unearth your next handmade delight!</p>
             <hr className="w-9/12 mx-auto" />

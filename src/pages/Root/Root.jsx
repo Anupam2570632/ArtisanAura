@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 
 const Root = () => {
     return (
-        <div>
+        <div className="font-cabin">
             <HelmetProvider>
                 <Header/>
                 <div className=" mt-[65px]">

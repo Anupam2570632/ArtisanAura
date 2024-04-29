@@ -14,7 +14,7 @@ const ItemDetails = () => {
         isCustom = false
     }
     return (
-        <div className="w-11/12 md:w-[60%] border p-6 my-20 items-center mx-auto flex flex-col gap-10">
+        <div className="w-11/12 md:w-[60%] max-w-[950px] border p-6 my-20 items-center mx-auto flex flex-col gap-10">
             <div className="flex-1">
                 <img className="rounded-md" src={image} alt="" />
             </div>

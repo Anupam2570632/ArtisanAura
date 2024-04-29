@@ -9,4 +9,8 @@
 - They can visit the all art and craft item page to see all items
 - responsive in all devices
 
+## NPM packages use for challenge task
+- React-simple-typewriter
+- React-tooltip
+
 ### Selected Category - 5. Ceramics and Pottery

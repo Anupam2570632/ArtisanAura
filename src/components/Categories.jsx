@@ -14,7 +14,7 @@ const Categories = () => {
 
 
     return (
-        <div className="w-11/12 md:w-4/5 mx-auto mb-24 space-y-6">
+        <div className="w-11/12 md:w-4/5 mx-auto mb-24 space-y-6 max-w-[1500px]">
             <Typography className="text-center" variant="h4" color="blue-gray">
                 Explore Art & Craft Categories
             </Typography>

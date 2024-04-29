@@ -21,5 +21,5 @@
 .card-main:hover .card-item{
     bottom: 0;
     background-color: white;
-    transition-duration: 400ms;
+    transition-duration: 500ms;
 }

@@ -32,7 +32,7 @@ const MyItem = () => {
         console.log(id)
 
         swal({
-            title: "Are you sure want to delete this coffee?",
+            title: "Are you sure want to delete this item?",
             text: "Once deleted, you will not be able to recover this imaginary file!",
             icon: "warning",
             buttons: true,
@@ -46,7 +46,7 @@ const MyItem = () => {
                         .then(res => res.json())
                         .then(data => {
                             if (data.deletedCount > 0) {
-                                swal("This coffee has been deleted!", {
+                                swal("This item has been deleted!", {
                                     icon: "success",
                                 });
                                 const remainingItem = items.filter(coffee => coffee._id !== id)
@@ -62,7 +62,7 @@ const MyItem = () => {
 
     if (displayData.length === 0) {
         return (
-            <div className="w-11/12 md:w-[55%] mx-auto py-10 text-center space-y-6">
+            <div className="w-11/12 md:w-[55%] max-w-[1000px] mx-auto py-10 text-center space-y-6">
                 <Typography className="text-center" variant="h4" color="blue-gray">
                     Your Items Collection
                 </Typography>
@@ -77,7 +77,7 @@ const MyItem = () => {
 
 
     return (
-        <div className="w-11/12 md:w-[55%] mx-auto py-10 text-center space-y-6">
+        <div className="w-11/12 max-w-[1000px] md:w-[55%] mx-auto py-10 text-center space-y-6">
             <Typography className="text-center" variant="h4" color="blue-gray">
                 Your Items Collection
             </Typography>

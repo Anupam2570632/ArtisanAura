@@ -7,7 +7,7 @@ const AllItems = () => {
     const loadedItems = useLoaderData()
     console.log(loadedItems)
     return (
-        <div className="w-11/12 md:w-4/5 mx-auto py-10 md:py-20 space-y-6">
+        <div className="w-11/12 md:w-4/5 max-w-[1500px] mx-auto py-10 md:py-20 space-y-6">
             <Typography className="text-center" variant="h4" color="blue-gray">
                 Discover Artisan Treasures
             </Typography>
