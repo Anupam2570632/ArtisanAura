@@ -12,7 +12,6 @@ const Categories = () => {
             .then(data => setCategories(data))
     }, [])
 
-    console.log(categories)
 
     return (
         <div className="w-11/12 md:w-4/5 mx-auto mb-24 space-y-6">

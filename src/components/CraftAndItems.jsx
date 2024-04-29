@@ -13,7 +13,7 @@ const CraftAndItems = () => {
             .then(data => setItems(data))
     }, [])
 
-    console.log(items)
+
     return (
         <div className="space-y-6 text-center py-16 md:py-32">
             <h1 className="text-2xl md:text-4xl font-bold ">Our Craft & Items</h1>

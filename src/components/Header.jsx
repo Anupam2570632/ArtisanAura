@@ -10,7 +10,6 @@ import { FaMoon } from "react-icons/fa6";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
-    console.log(user)
 
     const themeC = document.querySelector('html')
     const [theme, setTheme] = useState(true)
@@ -43,6 +42,7 @@ const Header = () => {
         <li>
             <NavLink to={'/myItems'}>My Art&Craft List</NavLink>
         </li>
+        <Link to={'/register'}><button className="btn md:hidden">Register</button></Link>
     </>
 
     return (
@@ -86,9 +86,9 @@ const Header = () => {
                                 <button onClick={handleLogOut} className="btn">Log Out</button>
                             </>
                             :
-                            <div className="space-x-4">
+                            <div className="space-x-4 flex ">
                                 <Link to={'/login'}><button className="btn">Log In</button></Link>
-                                <Link to={'/register'}><button className="btn">Register</button></Link>
+                                <Link to={'/register'}><button className="btn hidden md:flex">Register</button></Link>
                             </div>
 
                     }

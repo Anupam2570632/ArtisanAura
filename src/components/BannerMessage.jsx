@@ -5,11 +5,10 @@ const BannerMessage = () => {
 
     const handleType = (number) => {
         // access word count number
-        console.log(number);
     }
 
     const handleDone = () => {
-        console.log(`Done after 5 loops!`);
+       
     }
 
     return (
